@@ -271,6 +271,7 @@ class SSH2_KexDB:  # pylint: disable=too-few-public-methods
             'ssh-mldsa-65': [[], [], [], [INFO_NIST_PQC_LEVEL_3]],
             'ssh-mldsa-87': [[], [], [], [INFO_NIST_PQC_LEVEL_5]],
             'ssh-mldsa44': [[], [], [], [INFO_NIST_PQC_LEVEL_2]],
+            'ssh-mldsa44-ed25519@openssh.com': [['10.4'], [], [], [INFO_NIST_PQC_LEVEL_2]],
             'ssh-mldsa65': [[], [], [], [INFO_NIST_PQC_LEVEL_3]],
             'ssh-mldsa87': [[], [], [], [INFO_NIST_PQC_LEVEL_5]],
             'ssh-rsa1': [[], [FAIL_SHA1]],
