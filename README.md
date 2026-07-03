@@ -267,7 +267,7 @@ For convenience, a web front-end on top of the command-line tool is available at
  - Added UNIX server socket scanning (specify the target with `unix:///path/to/socket`).
  - Added SOCKS5 proxy support (specify the proxy with `--socks5 host:port`); partial credit [Michał Majchrowicz](https://github.com/sectroyer).
  - Updated built-in policy for Debian 12.
- - Added built-in policies for OpenSSH 10.0, 10.1, 10.2, and 10.3.
+ - Added built-in policies for OpenSSH 10.0, 10.1, 10.2, 10.3, and 10.4.
  - Added hardening guides and policies for Debian 13.
  - Added hardening guides and policies for Rocky Linux 10.
  - Added hardening guides and policies for Ubuntu 26.04.
