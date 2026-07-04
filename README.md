@@ -252,7 +252,7 @@ For convenience, a web front-end on top of the command-line tool is available at
 
 ## ChangeLog
 
-### v3.4.0-dev
+### v3.9.0 (2026-07-04)
  - BIG THANKS to [realmiwi](https://github.com/realmiwi) for being the project's *very first sponsor!!*
  - Added support for Python 3.14.
  - Dropped support for Python 3.8, as it reached end-of-life in October 2024.
