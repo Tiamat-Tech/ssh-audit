@@ -51,7 +51,7 @@ usage: ssh-audit.py [-h] [-4] [-6] [-b] [-c] [-d]
                     [--socks5 host:port] [--threads N]
                     [host]
 
-# ssh-audit.py v3.4.0-dev, https://github.com/jtesta/ssh-audit
+# ssh-audit.py v3.4.1-dev, https://github.com/jtesta/ssh-audit
 
 positional arguments:
   host                  target hostname or IPv4/IPv6 address
@@ -239,9 +239,9 @@ $ snap install ssh-audit
 
 To install from Dockerhub:
 ```
-$ docker pull positronsecurity/ssh-audit
+$ docker pull docker.io/positronsecurity/ssh-audit
 ```
-(Then run with: `docker run -it --rm -p 2222:2222 positronsecurity/ssh-audit 10.1.1.1`)
+(Then run with: `docker run -it --rm -p 2222:2222 docker.io/positronsecurity/ssh-audit 10.1.1.1`)
 
 The status of various other platform packages can be found below (via Repology):
 

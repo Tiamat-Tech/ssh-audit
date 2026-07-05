@@ -326,6 +326,9 @@ class DHEat:
 
             del socket_dict[s]
 
+        # Check if this platform has socket.AF_UNIX. Windows does not.
+        has_af_unix = hasattr(socket, 'AF_UNIX')
+
         # Resolve the target into an IP address
         out.d("Resolving target %s..." % aconf.host)
         target_address_family, target_ip_address = DHEat._resolve_hostname(aconf.host, aconf.ip_version_preference)
@@ -442,7 +445,7 @@ class DHEat:
                 s.setblocking(False)
 
                 # out.d("Creating socket (%u of %u already exist)..." % (len(socket_dict), concurrent_sockets), write_now=True)
-                if target_address_family == socket.AF_UNIX:
+                if has_af_unix and (target_address_family == socket.AF_UNIX):
                     ret = s.connect_ex(target_ip_address)
                 else:
                     ret = s.connect_ex((target_ip_address, aconf.port))
@@ -912,7 +915,7 @@ class DHEat:
             now = time.time()
             if (now - last_update) >= 1.0:
                 seconds_running = now - self.start_timer
-                print(f"{self.WHITEB}{spinner[spinner_index]}{self.CLEAR} TCP SYNs/sec: {self.BLUEB}{int(self.num_attempted_tcp_connections / seconds_running):,d}{self.CLEAR}; Compl. conns/sec: {self.BLUEB}{int(self.num_successful_tcp_connections / seconds_running):,d}{self.CLEAR}; Bytes sent/sec: {self.BLUEB}{DHEat.add_byte_units(self.num_bytes_written / seconds_running)}{self.CLEAR}; DH kex/sec: {self.PURPLEB}{self.num_successful_dh_kex / seconds_running:,.1f}{self.CLEAR}    \r", end="")
+                print(f"{self.WHITEB}{spinner[spinner_index]}{self.CLEAR} TCP SYNs/sec: {self.BLUEB}{int(self.num_attempted_tcp_connections / seconds_running):,d}{self.CLEAR}; Compl. conns/sec: {self.BLUEB}{self.num_successful_tcp_connections / seconds_running:,.1f}{self.CLEAR}; Bytes sent/sec: {self.BLUEB}{DHEat.add_byte_units(self.num_bytes_written / seconds_running)}{self.CLEAR}; DH kex/sec: {self.PURPLEB}{self.num_successful_dh_kex / seconds_running:,.1f}{self.CLEAR}    \r", end="")
                 last_update = now
                 spinner_index = (spinner_index + 1) % 4
 
