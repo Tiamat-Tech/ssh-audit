@@ -13,11 +13,12 @@ source-code:
   - https://github.com/jtesta/ssh-audit
 website:
   - https://github.com/jtesta/ssh-audit
-base: core26
+#base: core26
+base: core24
 grade: stable
 confinement: strict
 platforms:
-  all:
+  multi:
     build-on: [amd64]
     build-for: [all]
 
@@ -29,5 +30,5 @@ apps:
 parts:
   ssh-audit:
     plugin: python
-    stage-packages: [python3.14, python3.14-venv]
+    #stage-packages: [python3.14, python3.14-venv]
     source: .
