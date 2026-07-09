@@ -22,7 +22,7 @@
    THE SOFTWARE.
 """
 # The version to display.
-VERSION = 'v3.9.0'
+VERSION = 'v3.9.1-dev'
 
 # SSH software to impersonate
 SSH_HEADER = 'SSH-{0}-OpenSSH_10.3'
