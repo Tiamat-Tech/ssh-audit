@@ -324,7 +324,8 @@ class DHEat:
             except OSError:
                 pass
 
-            del socket_dict[s]
+            if s in socket_dict:
+                del socket_dict[s]
 
         # Check if this platform has socket.AF_UNIX. Windows does not.
         has_af_unix = hasattr(socket, 'AF_UNIX')
